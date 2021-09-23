@@ -1,4 +1,4 @@
-# WisePops Frontend Test
+# Unagi Frontend Test
 
 ## Requirements
 
