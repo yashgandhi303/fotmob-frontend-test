@@ -1,5 +1,5 @@
 {
-  "name": "frontend_test",
+  "name": "unagi_frontend_test",
   "private": true,
   "scripts": {
     "start": "run-p start:front start:back",
@@ -8,18 +8,18 @@
     "format": "prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx,css}\""
   },
   "devDependencies": {
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
-    "@types/react-router-dom": "^5.1.7",
+    "@types/react": "^17.0.25",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.3.0",
     "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.12.3",
-    "prettier": "^2.2.1",
-    "typescript": "^4.1.3"
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.3"
   },
   "dependencies": {
     "json-server": "^0.16.3",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-router-dom": "^5.2.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0"
   }
 }
