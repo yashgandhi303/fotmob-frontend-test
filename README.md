@@ -13,9 +13,12 @@
 In this exercise, we'll test your React skills by creating a simple collection card website.
 
 The project is already setup in this repository, so to start, fork it and when
-you are done, invite @hmatthieu and @basharov on GitHub to collaborate on it.
+you are done, invite @hmatthieu and @omar-elshamy on GitHub to collaborate on it.
 
-**Please spend not more than 4 hours on this test.**
+You are encouraged to go beyond the scope. Check the bonus ideas at each step
+if you need some inspiration.
+
+**Please spend no more than 4 hours on this test unless you go beyond the scope.**
 
 ## Steps
 
@@ -78,7 +81,7 @@ Bonus points (can be done in arbitrary order):
 - Implement client-side validation.
 - Implement REST/REST-like endpoint(s).
 - Add TS types/interfaces where applicable.
-- Handle server-side errors, e.g. 500 on submitting.
+- Handle server-side errors, e.g. 4xx on submitting.
 
 ### 4. Show all the cards as a collection
 
@@ -106,11 +109,12 @@ You will be evaluated based on the following criteria:
   - Did you go further the scope? But should not interfere with the two previous point.
 
 **Ideas and tools we love and use in the real project:**
-- TypeScript
+- TypeScript without `any`
 - Hooks
 - Breaking code down to small pieces
 - Reusable components
 - Types shared across client and backend services
 - Automated code linting and formatting
+- CSS in JS
 
 ### Good luck!
