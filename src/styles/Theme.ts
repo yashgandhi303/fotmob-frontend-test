@@ -9,6 +9,8 @@ export const lightTheme: DefaultTheme = {
   footerBackground: '#000000',
   footerColor: '#ffffff',
   fontFamily: "'Source Sans Pro', sans-serif",
+  cardBackground: '#ffffff',
+  borderColor: '#e0e0e0',
 };
 
 export const darkTheme: DefaultTheme = {
@@ -20,4 +22,6 @@ export const darkTheme: DefaultTheme = {
   footerBackground: '#000000',
   footerColor: '#ffffff',
   fontFamily: "'Source Sans Pro', sans-serif",
+  cardBackground: '#1c1c1c',
+  borderColor: '#444444',
 };

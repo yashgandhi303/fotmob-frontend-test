@@ -5,6 +5,7 @@
       "player": {
         "firstname": "Harry",
         "lastname": "Kane",
+        "team": "Bayern Munich",
         "birthday": "1993-07-28T08:38:50.090Z",
         "image": "https://images.fotmob.com/image_resources/playerimages/26166.png"
       }
@@ -14,6 +15,7 @@
       "player": {
         "firstname": "Cristiano",
         "lastname": "Ronaldo",
+        "team": "Real Madrid",
         "birthday": "1985-02-05T08:38:50.090Z",
         "image": "https://images.fotmob.com/image_resources/playerimages/4952.png"
       }
@@ -23,6 +25,7 @@
       "player": {
         "firstname": "Lionel",
         "lastname": "Messi",
+        "team": "FC FIFA Good Boy",
         "birthday": "1987-06-24T08:38:50.090Z",
         "image": "https://images.fotmob.com/image_resources/playerimages/12690.png"
       }
@@ -32,6 +35,7 @@
       "player": {
         "firstname": "Kylian",
         "lastname": "Mbappe",
+        "team": "Real Madrid",
         "birthday": "1998-12-20T08:38:50.090Z",
         "image": "https://images.fotmob.com/image_resources/playerimages/36394.png"
       }
@@ -41,6 +45,7 @@
       "player": {
         "firstname": "Neymar",
         "lastname": "Jr",
+        "team": "Hospital FC",
         "birthday": "1992-02-05T08:38:50.090Z",
         "image": "https://images.fotmob.com/image_resources/playerimages/20656.png"
       }
@@ -50,6 +55,7 @@
       "player": {
         "firstname": "Erling",
         "lastname": "Haaland",
+        "team": "Manchester City",
         "birthday": "2000-07-21T08:38:50.090Z",
         "image": "https://images.fotmob.com/image_resources/playerimages/85907.png"
       }
@@ -59,6 +65,7 @@
       "player": {
         "firstname": "Kevin",
         "lastname": "De Bruyne",
+        "team": "Manchester City",
         "birthday": "1991-06-28T08:38:50.090Z",
         "image": "https://images.fotmob.com/image_resources/playerimages/19180.png"
       }
@@ -68,6 +75,7 @@
       "player": {
         "firstname": "Sergio",
         "lastname": "Ramos",
+        "team": "Real Madrid",
         "birthday": "1986-03-30T08:38:50.090Z",
         "image": "https://images.fotmob.com/image_resources/playerimages/18812.png"
       }
@@ -77,6 +85,7 @@
       "player": {
         "firstname": "Luka",
         "lastname": "Modric",
+        "team": "Real Madrid",
         "birthday": "1985-09-09T08:38:50.090Z",
         "image": "https://images.fotmob.com/image_resources/playerimages/8784.png"
       }
@@ -86,6 +95,7 @@
       "player": {
         "firstname": "Zlatan",
         "lastname": "Ibrahimovic",
+        "team": "Retired",
         "birthday": "1981-10-03T08:38:50.090Z",
         "image": "https://images.fotmob.com/image_resources/playerimages/5452.png"
       }
@@ -95,6 +105,7 @@
       "player": {
         "firstname": "Gareth",
         "lastname": "Bale",
+        "team": "Golf Player",
         "birthday": "1989-07-16T08:38:50.090Z",
         "image": "https://images.fotmob.com/image_resources/playerimages/17478.png"
       }
@@ -104,6 +115,7 @@
       "player": {
         "firstname": "Karim",
         "lastname": "Benzema",
+        "team": "FC Underrated",
         "birthday": "1987-12-19T08:38:50.090Z",
         "image": "https://images.fotmob.com/image_resources/playerimages/4952.png"
       }

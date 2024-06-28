@@ -16,7 +16,7 @@ const Card = styled.div`
   color: ${({ theme }) => theme.color};
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   margin: 20px;
-  border: 1px solid ${({ theme }) => theme.borderColor}; /* Added border */
+  border: 1px solid ${({ theme }) => theme.borderColor};
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
