@@ -10,5 +10,7 @@ declare module 'styled-components' {
     footerBackground: string;
     footerColor: string;
     fontFamily: string;
+    cardBackground: string;
+    borderColor: string;
   }
 }

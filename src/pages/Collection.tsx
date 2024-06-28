@@ -1,31 +1,36 @@
 import React from 'react';
-
-import { fetchCollection } from '../lib/collection';
-import styled from 'styled-components';
 import PlayerCard from '../components/Cards/PlayerCard';
-
-const CollectionContainer = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-  }
-`;
+import { useQuery } from 'react-query';
+import { FetchError, PlayerCardType } from '../types';
+import { fetchAllPlayers } from '../lib/endpoints';
+import { CollectionContainer, Message } from '../styles/pages/Collection.styles';
 
 export const Collection = () => {
-  const collection = fetchCollection();
-  const card = collection[0];
+  const {
+    error,
+    isLoading,
+    data: playerData,
+  } = useQuery<PlayerCardType[], FetchError>(['allPlayers'], fetchAllPlayers);
 
-  /**
-   * Step 1: Render the card
-   */
+  if (isLoading) {
+    return (
+      <CollectionContainer>
+        <Message>Loading...</Message>
+      </CollectionContainer>
+    );
+  }
+
+  if (error) {
+    return (
+      <CollectionContainer>
+        <Message>Error loading collection...</Message>
+      </CollectionContainer>
+    );
+  }
+
   return (
     <CollectionContainer>
-      <PlayerCard id={card?.id} player={card.player} />
+      {playerData?.map((card: PlayerCardType) => <PlayerCard key={card?.id} id={card?.id} player={card.player} />)}
     </CollectionContainer>
   );
 };

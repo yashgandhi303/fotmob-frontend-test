@@ -1,66 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useTheme } from '../lib/context/ThemeContext';
-
-const HeaderContainer = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: ${({ theme }) => theme.background};
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const Logo = styled.div`
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  font-size: 24px;
-  font-weight: bold;
-
-  img {
-    height: 30px;
-    margin-right: 10px;
-  }
-`;
-
-const Nav = styled.nav`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  background-color: ${({ theme }) => theme.logoColor};
-  border-radius: 30px;
-  padding: 10px 20px;
-
-  @media (max-width: 768px) {
-    margin: 10px 0;
-  }
-`;
-
-const NavLink = styled.a`
-  text-decoration: none;
-  color: ${({ theme }) => (theme.color === '#000000' ? '#fff' : '#000')};
-  font-size: 16px;
-
-  &:hover {
-    color: gray;
-  }
-
-  &.cta {
-    font-weight: bold;
-    color: ${({ theme }) =>
-      theme.buttonColor === '#000000' ? '#fff' : '#000'};
-  }
-`;
+import { HeaderContainer, Logo, Nav, NavLink } from './styles/Header.styles';
 
 const Header: React.FC = () => {
   const { theme } = useTheme();
@@ -69,13 +9,7 @@ const Header: React.FC = () => {
     <HeaderContainer>
       <Logo>
         <NavLink href="/">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="108"
-            height="34"
-            viewBox="0 0 108 34"
-            fill="none"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="108" height="34" viewBox="0 0 108 34" fill="none">
             <g>
               <path
                 d="M20.1955 2.32162L20.982 0L13.3654 0.25247L4.60331 4.40063L4.57081 4.40379L1.26608 4.71928L0 6.08472L9.3152 8.86659L9.12579 7.42396L19.7533 10.5978L10.9812 9.36414L11.0974 10.6346L0.547012 8.25371L2.17176 11.0419L8.8288 13.03L16.0553 14.5541L25.7118 19.183L12.7137 15.6588L3.52482 18.9281V27.2737L25.2864 34V30.0921L17.7129 25.4532L7.45611 26.2745L32 20.6483V10.2846L20.1955 2.32162Z"
