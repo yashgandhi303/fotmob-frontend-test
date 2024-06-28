@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Tilt from 'react-parallax-tilt';
-import InfoCard from './Cards/Info-card';
-// import InfoCard from './InfoCard';
+import InfoCard from '../components/Cards/InfoCard';
 
 const Section = styled.section`
   display: flex;

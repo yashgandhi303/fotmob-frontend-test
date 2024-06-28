@@ -1,6 +1,6 @@
 import React from 'react';
-import CardSection from '../components/Cards/Home-page-card';
-import InfoSection from '../components/Info-section';
+import CardSection from '../components/Cards/HomePageCard';
+import InfoSection from '../containers/InfoSection';
 
 export const HomePage = () => {
   return (
