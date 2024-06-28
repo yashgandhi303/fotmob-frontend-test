@@ -4,14 +4,15 @@ import { useQuery } from 'react-query';
 import { FetchError, PlayerCardType } from '../types';
 import { fetchAllPlayers } from '../lib/endpoints';
 import { CollectionContainer, Message } from '../styles/pages/Collection.styles';
+import useDocumentTitle from '../hooks/useDocumentTitle';
 
 export const Collection = () => {
+  useDocumentTitle('Players Collection', true);
   const {
     error,
     isLoading,
     data: playerData,
   } = useQuery<PlayerCardType[], FetchError>(['allPlayers'], fetchAllPlayers);
-
   if (isLoading) {
     return (
       <CollectionContainer>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '../lib/context/ThemeContext';
+import { useTheme } from '../context/ThemeContext';
 import { HeaderContainer, Logo, Nav, NavLink } from './styles/Header.styles';
 
 const Header: React.FC = () => {

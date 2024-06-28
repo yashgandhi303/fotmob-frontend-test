@@ -7,9 +7,10 @@ import { CreateCard } from './pages/CreateCard';
 import { HomePage } from './pages/HomePage';
 import Header from './containers/Header';
 import Footer from './containers/Footer';
-import { useTheme } from './lib/context/ThemeContext';
+import { useTheme } from './context/ThemeContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import { AppContainer, Main, ToggleButton } from './styles/GlobalStyles';
+import ScrollToTop from './hooks/useScrollToTop';
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ export const App = () => {
         <ErrorBoundary>
           <Main>
             <Router>
+              <ScrollToTop />
               <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/collection" component={Collection} />
