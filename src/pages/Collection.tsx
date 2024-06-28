@@ -7,12 +7,13 @@ import { CollectionContainer, Message } from '../styles/pages/Collection.styles'
 import useDocumentTitle from '../hooks/useDocumentTitle';
 
 export const Collection = () => {
-  useDocumentTitle('Players Collection', true);
+  useDocumentTitle('Player Collection', true);
   const {
     error,
     isLoading,
     data: playerData,
   } = useQuery<PlayerCardType[], FetchError>(['allPlayers'], fetchAllPlayers);
+
   if (isLoading) {
     return (
       <CollectionContainer>
@@ -25,6 +26,14 @@ export const Collection = () => {
     return (
       <CollectionContainer>
         <Message>Error loading collection...</Message>
+      </CollectionContainer>
+    );
+  }
+
+  if (playerData?.length === 0) {
+    return (
+      <CollectionContainer>
+        <Message>We cannot serve you right now, please press Create Card to feed Me :D</Message>
       </CollectionContainer>
     );
   }
