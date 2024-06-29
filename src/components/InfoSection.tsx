@@ -1,6 +1,6 @@
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
-import InfoCard from '../components/Cards/InfoCard';
+import InfoCard from './Cards/InfoCard';
 import { CenterLogo, CenterLogoWrapper, Grid, LogoImage, Section } from './styles/InfoSection.styles';
 
 const InfoSection: React.FC = () => (

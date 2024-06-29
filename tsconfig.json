@@ -1,20 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES6",                           // Specifies the ECMAScript target version.
-    "module": "commonjs",                      // Specifies the module system to use.
-    "strict": true,                            // Enables all strict type-checking options.
-    "jsx": "react",                            // Supports JSX in TypeScript.
-    "esModuleInterop": true,                   // Enables emit interoperability between CommonJS and ES Modules.
-    "skipLibCheck": true,                      // Skips type checking of declaration files.
-    "forceConsistentCasingInFileNames": true,  // Ensures consistent casing in imports.
-    "outDir": "./dist",                        // Redirects output structure to the directory.
-    "rootDir": "./src",                        // Specifies the root directory of input files.
-    "moduleResolution": "node",                // Specifies how modules are resolved.
-    "resolveJsonModule": true,                 // Include modules imported with `.json` extension.
-    "isolatedModules": true,                   // Ensures each file can be safely transpiled without relying on other imports.
-    "noEmit": true,                            // Prevents TypeScript from emitting compiled files.
-    "allowSyntheticDefaultImports": true,      // Allows default imports from modules with no default export.
+    "target": "ES6",
+    "module": "ES6",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "rootDir": "./src"
   },
-  "include": ["src"],                          // Files to include in the compilation.
-  "exclude": ["node_modules", "dist"]          // Files to exclude from the compilation.
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
 }

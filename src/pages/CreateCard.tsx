@@ -1,6 +1,10 @@
 import React from 'react';
+import { CreatePlayerContainer } from '../containers/CreateCardContainer';
+import { useDocumentTitle } from '../hooks';
 
-/**
- * Step 3: Render a form and everything needed to be able to create a card
- */
-export const CreateCard = () => <div />;
+export const CreateCard = () => (
+  <>
+    {useDocumentTitle('Unagi - Create New Player', true)}
+    <CreatePlayerContainer />
+  </>
+);

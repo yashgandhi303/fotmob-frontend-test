@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
   body {
@@ -43,4 +43,26 @@ export const ToggleButton = styled.button`
     background-color 0.3s,
     color 0.3s;
   z-index: 1001;
+`;
+
+const spin = keyframes`
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+`;
+
+export const Loader = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 4px solid ${({ theme }) => theme.loaderBorder};
+  border-left-color: ${({ theme }) => theme.loaderBorderLeft};
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  animation: ${spin} 1s linear infinite;
 `;

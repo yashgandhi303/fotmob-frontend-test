@@ -1,14 +1,12 @@
 import React from 'react';
-import CardSection from '../components/Cards/HomePageCard';
-import InfoSection from '../containers/InfoSection';
-import useDocumentTitle from '../hooks/useDocumentTitle';
+import { useDocumentTitle } from '../hooks';
+import { HomePageContainer } from '../containers/HomePageContainer';
 
 export const HomePage = () => {
   return (
     <>
-      {useDocumentTitle('Home', true)}
-      <InfoSection />
-      <CardSection />
+      {useDocumentTitle('Unagi - Home', true)}
+      <HomePageContainer />
     </>
   );
 };

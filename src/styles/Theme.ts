@@ -11,6 +11,8 @@ export const lightTheme: DefaultTheme = {
   fontFamily: "'Source Sans Pro', sans-serif",
   cardBackground: '#ffffff',
   borderColor: '#e0e0e0',
+  loaderBorder: 'rgba(0, 0, 0, 0.1)',
+  loaderBorderLeft: '#000000',
 };
 
 export const darkTheme: DefaultTheme = {
@@ -24,4 +26,6 @@ export const darkTheme: DefaultTheme = {
   fontFamily: "'Source Sans Pro', sans-serif",
   cardBackground: '#1c1c1c',
   borderColor: '#444444',
+  loaderBorder: 'rgba(255, 255, 255, 0.1)',
+  loaderBorderLeft: '#ffffff',
 };

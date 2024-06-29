@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTheme } from '../context/ThemeContext';
+import { useTheme } from '../context';
 import { HeaderContainer, Logo, Nav, NavLink } from './styles/Header.styles';
 
 const Header: React.FC = () => {
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
       </Logo>
       <Nav>
         <NavLink href="/collection">Collection</NavLink>
-        <NavLink href="#">Games</NavLink>
+        <NavLink href="/create-card">Create Card</NavLink>
         <NavLink href="#">About</NavLink>
       </Nav>
       <NavLink href="#" className="cta">

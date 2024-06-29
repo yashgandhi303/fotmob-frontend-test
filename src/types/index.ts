@@ -1,4 +1,4 @@
-interface PlayerType {
+export interface PlayerType {
   firstname: string;
   lastname: string;
   birthday: string;
@@ -28,4 +28,11 @@ export interface GeneralCardProps {
 export interface LazyImageProps {
   src: string;
   alt: string;
+  className?: string;
+}
+
+export interface FotMobPlayerSearchData {
+  id: string;
+  name: string;
+  teamName: string;
 }

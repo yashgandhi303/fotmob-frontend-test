@@ -2,8 +2,7 @@ import React, { createContext, useContext, ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme, darkTheme } from '../styles/Theme';
 import { GlobalStyles } from '../styles/GlobalStyles';
-import useLocalStorage from '../hooks/useLocalStorage';
-import useToggle from '../hooks/useToggle';
+import { useLocalStorage, useToggle } from '../hooks';
 
 type ThemeType = 'dark' | 'light';
 

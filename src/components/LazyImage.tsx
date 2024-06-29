@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Image, ImageWrapper, Loader } from './styles/LazyImage.styles';
+import { Image, ImageWrapper } from './styles/LazyImage.styles';
 import { LazyImageProps } from '../types';
+import { Loader } from '../styles/GlobalStyles';
 
-const LazyImage: React.FC<LazyImageProps> = ({ src, alt }) => {
+const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -13,7 +14,15 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt }) => {
   return (
     <ImageWrapper ref={ref}>
       {!isLoaded && <Loader />}
-      {inView && <Image src={src} alt={alt} onLoad={() => setIsLoaded(true)} style={{ opacity: isLoaded ? 1 : 0 }} />}
+      {inView && (
+        <Image
+          className={className}
+          src={src}
+          alt={alt}
+          onLoad={() => setIsLoaded(true)}
+          style={{ opacity: isLoaded ? 1 : 0 }}
+        />
+      )}
     </ImageWrapper>
   );
 };

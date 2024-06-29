@@ -12,5 +12,7 @@ declare module 'styled-components' {
     fontFamily: string;
     cardBackground: string;
     borderColor: string;
+    loaderBorder: string;
+    loaderBorderLeft: string;
   }
 }
