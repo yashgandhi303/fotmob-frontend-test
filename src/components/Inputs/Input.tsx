@@ -1,27 +1,39 @@
 import React from 'react';
-import { Control, Controller, ControllerRenderProps } from 'react-hook-form';
+import {
+  Control,
+  Controller,
+  ControllerRenderProps,
+  FieldValues,
+  Path,
+  PathValue,
+  RegisterOptions,
+} from 'react-hook-form';
 import { humanReadableDate } from '../../utils/helpers';
 import { StyledInput } from './styles/Input.styles';
-import { CreatePlayerProps } from '../Forms/CreatePlayerForm';
 
-interface InputProps {
-  name: string;
-  control: Control<CreatePlayerProps>;
+interface InputProps<T extends FieldValues> {
+  name: Path<T>;
+  control: Control<T>;
   type?: string;
-  defaultValue?: string;
-  rules?: {
-    [key: string]: string;
-  };
+  defaultValue?: PathValue<T, Path<T>>;
+  rules?: Omit<RegisterOptions<T, Path<T>>, 'setValueAs' | 'disabled' | 'valueAsNumber' | 'valueAsDate'>;
   readOnly?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({ name, control, type = 'text', defaultValue = '', rules, readOnly = false }) => (
+const Input = <T extends FieldValues>({
+  name,
+  control,
+  type = 'text',
+  defaultValue = '' as PathValue<T, Path<T>>,
+  rules,
+  readOnly = false,
+}: InputProps<T>) => (
   <Controller
     name={name}
     control={control}
     defaultValue={defaultValue}
     rules={rules}
-    render={({ field }: { field: ControllerRenderProps }) => (
+    render={({ field }: { field: ControllerRenderProps<T> }) => (
       <StyledInput
         {...field}
         readOnly={readOnly}

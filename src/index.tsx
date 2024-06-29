@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { ThemeContextProvider } from './context';
-import { App } from './App';
+import { App } from './app';
 
 const WrappedApp: React.FC = () => (
   <ThemeContextProvider>

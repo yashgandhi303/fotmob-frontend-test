@@ -1,5 +1,13 @@
 import React, { useState, useRef } from 'react';
-import { Control, Controller, ControllerRenderProps } from 'react-hook-form';
+import {
+  Control,
+  Controller,
+  ControllerRenderProps,
+  FieldValues,
+  Path,
+  PathValue,
+  RegisterOptions,
+} from 'react-hook-form';
 import { useDebounce, useFotmobSearch, useOnClickOutside } from '../../hooks';
 import { FotMobPlayerSearchData } from '../../types';
 import { generatePlayerImageUrl } from '../../utils/helpers';
@@ -11,18 +19,15 @@ import {
   SuggestionsList,
 } from './styles/AutoComplete.styles';
 import { StyledInput } from './styles/Input.styles';
-import { CreatePlayerProps } from '../Forms/CreatePlayerForm';
 
-interface AutocompleteProps {
-  name: string;
-  control: Control<CreatePlayerProps>;
+interface AutocompleteProps<T extends FieldValues> {
+  name: Path<T>;
+  control: Control<T>;
   onSelect: (player: FotMobPlayerSearchData) => void;
-  rules?: {
-    [key: string]: string;
-  };
+  rules?: Omit<RegisterOptions<T, Path<T>>, 'setValueAs' | 'disabled' | 'valueAsNumber' | 'valueAsDate'>;
 }
 
-const Autocomplete: React.FC<AutocompleteProps> = ({ name, control, onSelect, rules }) => {
+const Autocomplete = <T extends FieldValues>({ name, control, onSelect, rules }: AutocompleteProps<T>) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
@@ -35,9 +40,9 @@ const Autocomplete: React.FC<AutocompleteProps> = ({ name, control, onSelect, ru
     <Controller
       name={name}
       control={control}
-      defaultValue=""
+      defaultValue={'' as PathValue<T, Path<T>>}
       rules={rules}
-      render={({ field }: { field: ControllerRenderProps }) => (
+      render={({ field }: { field: ControllerRenderProps<T> }) => (
         <AutocompleteContainer ref={suggestionsRef}>
           <StyledInput
             {...field}

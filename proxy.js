@@ -1,12 +1,12 @@
-import express, { Request, Response } from 'express';
-import axios from 'axios';
-import cors from 'cors';
+const express = require('express');
+const axios = require('axios');
+const cors = require('cors');
 
 const app = express();
 const port = 8002;
 app.use(cors());
 
-app.get('/fotmob-api/search', async (req: Request, res: Response) => {
+app.get('/fotmob-api/search', async (req, res) => {
   try {
     const { term } = req.query;
     const response = await axios.get(`https://www.fotmob.com/api/search/searchData`, {
@@ -18,7 +18,7 @@ app.get('/fotmob-api/search', async (req: Request, res: Response) => {
   }
 });
 
-app.get('/fotmob-api/player', async (req: Request, res: Response) => {
+app.get('/fotmob-api/player', async (req, res) => {
   try {
     const { id } = req.query;
     const response = await axios.get(`https://www.fotmob.com/api/playerData`, {

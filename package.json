@@ -7,7 +7,7 @@
     "start:front": "parcel --port 8000 index.html",
     "start:back": "run-p json-server proxy-server",
     "json-server": "json-server --port 8001 db.json",
-    "proxy-server": "node proxy.ts",
+    "proxy-server": "node proxy.js",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "format": "prettier --write \"src/**/*.{js,jsx,json,md,ts,tsx,css}\"",
     "prepare": "husky install"
