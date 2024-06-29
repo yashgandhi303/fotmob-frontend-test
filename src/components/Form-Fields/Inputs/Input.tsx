@@ -8,7 +8,7 @@ import {
   PathValue,
   RegisterOptions,
 } from 'react-hook-form';
-import { humanReadableDate } from '../../utils/helpers';
+import { humanReadableDate } from '../../../utils/helpers';
 import { StyledInput } from './styles/Input.styles';
 
 interface InputProps<T extends FieldValues> {
@@ -20,7 +20,7 @@ interface InputProps<T extends FieldValues> {
   readOnly?: boolean;
 }
 
-const Input = <T extends FieldValues>({
+export const Input = <T extends FieldValues>({
   name,
   control,
   type = 'text',
@@ -43,5 +43,3 @@ const Input = <T extends FieldValues>({
     )}
   />
 );
-
-export default Input;

@@ -3,8 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { AxiosError } from 'axios';
 import { useQueryClient, useMutation } from 'react-query';
 import { axiosInstance } from '../../api';
-import Autocomplete from '../../components/Inputs/AutoComplete';
-import Input from '../../components/Inputs/Input';
+import { Input, Autocomplete } from '../../components/Form-Fields';
 import { usePlayerDetails } from '../../hooks';
 import { FotMobPlayerSearchData, PlayerCardType, PlayerType } from '../../types';
 import { generatePlayerImageUrl } from '../../utils/helpers';
@@ -13,11 +12,11 @@ import { useHistory } from 'react-router-dom';
 import { Form, Error, Button } from './styles/CreatePlayerForm.styles';
 import { fetchPlayerById } from '../../lib/endpoints';
 
-export interface CreatePlayerProps extends PlayerType {
+interface CreatePlayerProps extends PlayerType {
   player?: string;
 }
 
-const CreatePlayerForm: React.FC = () => {
+export const CreatePlayerForm: React.FC = () => {
   const { addToast } = useToast();
   const queryClient = useQueryClient();
   const router = useHistory();
@@ -131,5 +130,3 @@ const CreatePlayerForm: React.FC = () => {
     </Form>
   );
 };
-
-export default CreatePlayerForm;

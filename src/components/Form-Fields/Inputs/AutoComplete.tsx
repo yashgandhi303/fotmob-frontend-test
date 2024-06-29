@@ -8,9 +8,9 @@ import {
   PathValue,
   RegisterOptions,
 } from 'react-hook-form';
-import { useDebounce, useFotmobSearch, useOnClickOutside } from '../../hooks';
-import { FotMobPlayerSearchData } from '../../types';
-import { generatePlayerImageUrl } from '../../utils/helpers';
+import { useDebounce, useFotmobSearch, useOnClickOutside } from '../../../hooks';
+import { FotMobPlayerSearchData } from '../../../types';
+import { generatePlayerImageUrl } from '../../../utils/helpers';
 import {
   PlayerInfo,
   AutocompleteContainer,
@@ -27,7 +27,7 @@ interface AutocompleteProps<T extends FieldValues> {
   rules?: Omit<RegisterOptions<T, Path<T>>, 'setValueAs' | 'disabled' | 'valueAsNumber' | 'valueAsDate'>;
 }
 
-const Autocomplete = <T extends FieldValues>({ name, control, onSelect, rules }: AutocompleteProps<T>) => {
+export const Autocomplete = <T extends FieldValues>({ name, control, onSelect, rules }: AutocompleteProps<T>) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const debouncedSearchTerm = useDebounce(searchTerm, 300);
@@ -76,5 +76,3 @@ const Autocomplete = <T extends FieldValues>({ name, control, onSelect, rules }:
     />
   );
 };
-
-export default Autocomplete;
