@@ -10,7 +10,26 @@ import {
   LinksTitle,
   Logo,
   LogoContainer,
+  SocialIcons,
+  SocialIconLink,
 } from './styles/Footer.styles';
+
+const productLinks = [
+  { name: 'Ultimate Champions', url: '#' },
+  { name: 'Persona', url: '#' },
+  { name: 'Una Token', url: '#' },
+];
+
+const unagiLinks = [
+  { name: 'Careers', url: '#' },
+  { name: 'Contact', url: '#' },
+];
+
+const socialMedia = [
+  { name: 'Facebook', url: 'https://www.facebook.com', icon: '📘' },
+  { name: 'Twitter', url: 'https://www.twitter.com', icon: '🐦' },
+  { name: 'Instagram', url: 'https://www.instagram.com', icon: '📸' },
+];
 
 const Footer: React.FC = () => (
   <FooterContainer>
@@ -23,18 +42,30 @@ const Footer: React.FC = () => (
     <LinksContainer>
       <LinksColumn>
         <LinksTitle>PRODUCTS</LinksTitle>
-        <Link href="#">Ultimate Champions</Link>
-        <Link href="#">Persona</Link>
-        <Link href="#">Una Token</Link>
+        {productLinks.map((link, index) => (
+          <Link key={index} href={link.url}>
+            {link.name}
+          </Link>
+        ))}
       </LinksColumn>
       <LinksColumn>
         <LinksTitle>UNAGI</LinksTitle>
-        <Link href="#">Careers</Link>
-        <Link href="#">Contact</Link>
+        {unagiLinks.map((link, index) => (
+          <Link key={index} href={link.url}>
+            {link.name}
+          </Link>
+        ))}
       </LinksColumn>
     </LinksContainer>
     <FollowUsContainer>
       <FollowUsButton href="#">FOLLOW US</FollowUsButton>
+      <SocialIcons>
+        {socialMedia.map((media, index) => (
+          <SocialIconLink key={index} href={media.url} aria-label={media.name}>
+            {media.icon}
+          </SocialIconLink>
+        ))}
+      </SocialIcons>
     </FollowUsContainer>
   </FooterContainer>
 );

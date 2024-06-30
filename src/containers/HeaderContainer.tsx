@@ -1,9 +1,11 @@
 import React from 'react';
 import { useTheme } from '../context';
 import { HeaderContainer, Logo, Nav, NavLink } from './styles/Header.styles';
+import { Switch } from '../components/Switch';
+import { THEMEOPTIONS } from '../types';
 
 const Header: React.FC = () => {
-  const { theme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <HeaderContainer>
@@ -44,9 +46,7 @@ const Header: React.FC = () => {
         <NavLink href="/create-card">Create Card</NavLink>
         <NavLink href="#">About</NavLink>
       </Nav>
-      <NavLink href="#" className="cta">
-        GET IN TOUCH
-      </NavLink>
+      <Switch isActive={theme === THEMEOPTIONS.DARK} onToggle={toggleTheme} onLabel="☀️" offLabel="🌙" />
     </HeaderContainer>
   );
 };

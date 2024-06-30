@@ -14,7 +14,7 @@ export const CollectionContainer = styled.div`
 export const Sorting = styled.div`
   display: flex;
   justify-content: center;
-  padding: 20px;
+  padding: 0 20px;
 `;
 
 export const Message = styled.p`

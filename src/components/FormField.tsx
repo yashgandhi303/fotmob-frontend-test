@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import {
   Control,
   Controller,
@@ -23,22 +23,22 @@ export interface FormFieldProps<T extends FieldValues> {
   isAutocomplete?: boolean;
 }
 
-export const FormField: FC<FormFieldProps<FieldValues>> = ({
+export const FormField = <T extends FieldValues>({
   name,
   control,
   rules,
   type = 'text',
-  defaultValue = '' as PathValue<FieldValues, Path<FieldValues>>,
+  defaultValue,
   readOnly = false,
   onSelect,
   isAutocomplete = false,
-}) => (
+}: FormFieldProps<T>) => (
   <Controller
     name={name}
     control={control}
     defaultValue={defaultValue}
     rules={rules}
-    render={({ field }: { field: ControllerRenderProps<FieldValues> }) => (
+    render={({ field }: { field: ControllerRenderProps<T> }) => (
       <>
         {isAutocomplete ? (
           <Autocomplete

@@ -1,3 +1,8 @@
+export type ThemeType = THEMEOPTIONS;
+export enum THEMEOPTIONS {
+  DARK = 'dark',
+  LIGHT = 'light',
+}
 export interface PlayerType {
   firstname: string;
   lastname: string;

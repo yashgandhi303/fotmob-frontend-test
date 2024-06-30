@@ -5,6 +5,10 @@ export const Form = styled.form`
   flex-direction: column;
   max-width: 500px;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 `;
 
 export const Button = styled.button<{ disabled: boolean }>`

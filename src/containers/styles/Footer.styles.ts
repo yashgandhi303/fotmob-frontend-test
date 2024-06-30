@@ -110,3 +110,18 @@ export const Copyright = styled.div`
     margin-top: 10px;
   }
 `;
+
+export const SocialIcons = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+`;
+
+export const SocialIconLink = styled.a`
+  color: ${({ theme }) => theme.color};
+  font-size: 24px;
+  text-decoration: none;
+  &:hover {
+    color: ${({ theme }) => theme.buttonBackground};
+  }
+`;
