@@ -1,8 +1,20 @@
 import { axiosInstance, fotmobApiInstance } from '../api';
 import { FotMobPlayerSearchData, PlayerCardType } from '../types';
 
-export const fetchAllPlayers = async (): Promise<PlayerCardType[]> => {
-  const { data } = await axiosInstance.get('/cards');
+export const fetchAllPlayers = async (
+  page: number,
+  perPage: number,
+  sortField: string,
+  sortOrder: string
+): Promise<PlayerCardType[]> => {
+  const { data } = await axiosInstance.get('/cards', {
+    params: {
+      _page: page,
+      _limit: perPage || 10,
+      _sort: `player.${sortField}`,
+      _order: sortOrder,
+    },
+  });
   return data || [];
 };
 

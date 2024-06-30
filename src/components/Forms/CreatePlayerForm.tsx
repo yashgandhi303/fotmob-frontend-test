@@ -9,7 +9,7 @@ import { FotMobPlayerSearchData, PlayerCardType, PlayerType } from '../../types'
 import { generatePlayerImageUrl } from '../../utils/helpers';
 import { useToast } from '../../context';
 import { useHistory } from 'react-router-dom';
-import { Form, Error, Button } from './styles/CreatePlayerForm.styles';
+import { Form, Error, Button, Info } from './styles/CreatePlayerForm.styles';
 import { fetchPlayerById } from '../../lib/endpoints';
 
 interface CreatePlayerProps extends PlayerType {
@@ -103,6 +103,7 @@ export const CreatePlayerForm: React.FC = () => {
         onSelect={handlePlayerSelect}
         rules={{ required: 'Player is required' }}
       />
+      {<Info>{`Search is using 3rd Party API served by FotMob, It is only for demo purpose.`}</Info>}
       {errors.player && <Error>{errors.player.message}</Error>}
 
       <label>First Name</label>

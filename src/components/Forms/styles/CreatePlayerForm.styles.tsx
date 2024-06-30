@@ -24,3 +24,7 @@ export const Button = styled.button<{ disabled: boolean }>`
 export const Error = styled.p`
   color: red;
 `;
+
+export const Info = styled.p`
+  color: #ff9800;
+`;

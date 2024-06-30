@@ -35,3 +35,15 @@ export const humanReadableDate = (date: string, formattedDate: boolean = false):
     });
   }
 };
+
+export const generateSortingOptions = (fields: string[], ignoreFields: string[], dateFields: string[]) => {
+  return fields.reduce((acc, field) => {
+    if (!ignoreFields.includes(field)) {
+      acc.push(`${field} A-Z`, `${field} Z-A`);
+      if (dateFields?.includes(field)) {
+        acc.push(`${field} oldest-newest`, `${field} newest-oldest`);
+      }
+    }
+    return acc;
+  }, [] as string[]);
+};
