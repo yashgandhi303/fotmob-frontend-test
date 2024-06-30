@@ -3,7 +3,6 @@ import { useForm, SubmitHandler } from 'react-hook-form';
 import { AxiosError } from 'axios';
 import { useQueryClient, useMutation } from 'react-query';
 import { axiosInstance } from '../../api';
-import { Input, Autocomplete } from '../../components/Form-Fields';
 import { usePlayerDetails } from '../../hooks';
 import { FotMobPlayerSearchData, PlayerCardType, PlayerType } from '../../types';
 import { generatePlayerImageUrl } from '../../utils/helpers';
@@ -11,6 +10,7 @@ import { useToast } from '../../context';
 import { useHistory } from 'react-router-dom';
 import { Form, Error, Button, Info } from './styles/CreatePlayerForm.styles';
 import { fetchPlayerById } from '../../lib/endpoints';
+import { FormField } from '../FormField';
 
 interface CreatePlayerProps extends PlayerType {
   player?: string;
@@ -97,29 +97,36 @@ export const CreatePlayerForm: React.FC = () => {
     <Form onSubmit={handleSubmit(onSubmit)}>
       {serverError && <Error>{serverError}</Error>}
       <label>Player</label>
-      <Autocomplete
-        name="player"
+      <FormField
+        name={'player'}
         control={control}
-        onSelect={handlePlayerSelect}
         rules={{ required: 'Player is required' }}
+        onSelect={handlePlayerSelect}
+        isAutocomplete
       />
       {<Info>{`Search is using 3rd Party API served by FotMob, It is only for demo purpose.`}</Info>}
       {errors.player && <Error>{errors.player.message}</Error>}
 
       <label>First Name</label>
-      <Input readOnly name="firstname" control={control} rules={{ required: 'First name is required' }} />
+      <FormField name={'firstname'} control={control} rules={{ required: 'First name is required' }} readOnly />
       {errors.firstname && <Error>{errors.firstname.message}</Error>}
 
       <label>Last Name</label>
-      <Input readOnly name="lastname" control={control} rules={{ required: 'Last name is required' }} />
+      <FormField name={'lastname'} control={control} rules={{ required: 'Last name is required' }} readOnly />
       {errors.lastname && <Error>{errors.lastname.message}</Error>}
 
       <label>Date of Birth</label>
-      <Input readOnly name="birthday" control={control} type="date" rules={{ required: 'Date of birth is required' }} />
+      <FormField
+        readOnly
+        name="birthday"
+        control={control}
+        type="date"
+        rules={{ required: 'Date of birth is required' }}
+      />
       {errors.birthday && <Error>{errors.birthday.message}</Error>}
 
       <label>Team</label>
-      <Input name="team" readOnly control={control} rules={{ required: 'Team is required' }} />
+      <FormField name="team" readOnly control={control} rules={{ required: 'Team is required' }} />
       {errors.team && <Error>{errors.team.message}</Error>}
 
       <Button type="submit" disabled={!isDirty || isLoading || Object.keys(errors).length > 0 || !!serverError}>

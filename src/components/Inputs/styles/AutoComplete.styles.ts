@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import LazyImage from '../../../LazyImage';
+import LazyImage from '../../LazyImage';
 
 export const AutocompleteContainer = styled.div`
   position: relative;
