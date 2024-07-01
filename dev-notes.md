@@ -1,6 +1,10 @@
-### Summary
+### Full-Stack Development Summary
 
-This merge request introduces several features and improvements, including the creation of a collection page with pagination and sorting capabilities, the addition of a Create Card form, and various enhancements to the overall user experience. Below is a detailed explanation of the changes made:
+Yes, Everything is used from server, I have created a proxy server for Fotmob API which is used for searching and finding player details by ID and to store data in json-server.
+
+PS: Eslint, Prettier & Husky is integrated.
+
+Everything on Dev branch is uptodate. merge request introduces several features and improvements, including the creation of a collection page with pagination and sorting capabilities, the addition of a Create Card form, and various enhancements to the overall user experience. Below is a detailed explanation of the changes made:
 
 ### Features and Enhancements
 
@@ -78,6 +82,7 @@ This merge request introduces several features and improvements, including the c
 ### How to Test
 
 1. **Run the Application**:
+   - `npm install` and then `npm run start` to start both frontend and backend. You can also start them separately by following below commands. 
    - Start the frontend server: `npm run start:front`.
    - Start the backend server: `npm run start:back (also starts the proxy server)`.
 
