@@ -1,17 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { ThemeContextProvider } from './context';
+import { App } from './app';
 
-import { Collection } from './pages/Collection';
-import { CreateCard } from './pages/CreateCard';
-
-const App = () => (
-  <Router>
-    <Switch>
-      <Route exact path="/collection" component={Collection} />
-      <Route exact path="/create-card" component={CreateCard} />
-    </Switch>
-  </Router>
+const WrappedApp: React.FC = () => (
+  <ThemeContextProvider>
+    <App />
+  </ThemeContextProvider>
 );
 
-render(<App />, document.getElementById('root'));
+render(<WrappedApp />, document.getElementById('root'));

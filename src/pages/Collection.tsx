@@ -1,15 +1,10 @@
 import React from 'react';
+import { useDocumentTitle } from '../hooks';
+import { CollectionContainer } from '../containers/CollectionContainer';
 
-import { fetchCollection } from '../lib/collection';
-
-import './Collection.css';
-
-export const Collection = () => {
-  const collection = fetchCollection();
-  const card = collection[0];
-
-  /**
-   * Step 1: Render the card
-   */
-  return <div />;
-};
+export const Collection = () => (
+  <>
+    {useDocumentTitle('Unagi - Player Collection', true)}
+    <CollectionContainer />
+  </>
+);
